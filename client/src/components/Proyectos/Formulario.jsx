@@ -11,13 +11,31 @@ const estadoInicial = {
     estado: 'creado'
 }
 
-const Formulario = ({CrearProyectoFn}) => {
+const Formulario = () => {
+
+    const [datos, setDatos] = useState([]);
 
     const [formulario, setFormulario] = useState(estadoInicial);
 
     const navigate = useNavigate();
 
     const {id} = useParams();
+
+    //Función para Crear
+    const CrearProyecto = (obj) => {
+
+        return axios.post('http://localhost:8000/api/v1/proyectos', obj)
+        .then(resp => {
+            if(!resp.data.error){
+            setDatos([...datos, resp.data.datosJug]);
+            Swal.fire('','Se ha creado el proyecto','success');
+            return true;
+            }else{
+            Swal.fire('','No pudimos crear el proyecto', 'error');
+            return false;
+            }        
+        })
+    }
     
 
     const actualizarFormulario = ({target: {name, value}}) => {
@@ -34,7 +52,7 @@ const Formulario = ({CrearProyectoFn}) => {
 
         if(!id){
             console.log('formulario crea',formulario);
-            respuesta = await CrearProyectoFn(formulario);
+            respuesta = await CrearProyecto(formulario);
             console.log('Crea Proyecto', formulario);
             setFormulario(estadoInicial);
         } else {

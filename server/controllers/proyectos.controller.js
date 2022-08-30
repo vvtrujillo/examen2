@@ -31,7 +31,7 @@ module.exports.crear = (req, res) => {
         });
 }
 
-module.exports.actualizar = (req, res) => {
+module.exports.actualizar = (req, res) => {    
     Proyecto.findByIdAndUpdate(req.params.id, req.body, {runValidators: true})
         .then(resp => {
             res.json({
@@ -39,6 +39,7 @@ module.exports.actualizar = (req, res) => {
                 error: false
             })
         }).catch(e => {
+            console.log(e);
             res.json({
                 error: true,
                 mensaje: 'Ha ocurrido un error al actualizar.'

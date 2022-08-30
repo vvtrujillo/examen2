@@ -64,6 +64,7 @@
   margin: 10px;
   overflow-y: scroll;
 }
+
 .controles-main{
   margin: 10px;
   height: auto;
@@ -76,4 +77,25 @@
   box-shadow: 20px;
   padding: 20px;
   margin: 50px;
+}
+.titulo-col-proy-pend{
+  height: auto;
+  width: auto;
+  align-items: center;
+  border: solid black 2px;
+  background-color: rgb(172, 209, 240);
+}
+.titulo-col-proy-comp{
+  height: auto;
+  width: auto;
+  align-items: center;
+  border: solid black 2px;
+  background-color: rgb(233, 243, 174);
+}
+.titulo-col-proy-prog{
+  height: auto;
+  width: auto;
+  align-items: center;
+  border: solid black 2px;
+  background-color: rgb(175, 214, 103);
 }

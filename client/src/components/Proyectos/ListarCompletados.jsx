@@ -5,27 +5,17 @@ import { useState } from 'react';
 import Swal from 'sweetalert2';
 
 
-const ListarCompletados = ({eliminarFn}) => {
+const ListarCompletados = ({eliminarFn, datosTerm}) => {
 
-    const [datos, setDatos] = useState([]);
-
-    useEffect(() => {
-        axios.get('http://localhost:8000/api/v1/proyectosTerminados')
-            .then(resp => {
-                if(!resp.data.error){
-                  console.log('Use Effect para traer los proyectos en terminados',resp.data.datosProy)
-                  setDatos(resp.data.datosProy); 
-                }else {
-                  Swal.fire('Ooops!!!', resp.data.mensaje, 'error');
-                }        
-              })
-    }, [])
+    const [datos, setDatos] = useState([]);    
 
     return(
         <div className='subcontent-comp'>
-            <h1>Completados</h1>
+            <div className='titulo-col-proy-comp'>
+                <h1>Completados</h1>    
+            </div>        
             {
-                datos.map((j,i) =>
+                datosTerm.map((j,i) =>
                 <Card key={i}>
                     <CardBody>
                         <CardTitle>{j.nombre}</CardTitle>
@@ -34,7 +24,7 @@ const ListarCompletados = ({eliminarFn}) => {
                     </CardBody>
                 </Card>
                 )
-            }
+            }        
         </div>
     )
 }

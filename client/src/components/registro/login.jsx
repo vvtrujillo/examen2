@@ -43,6 +43,7 @@ const Login = () => {
     return (
         <React.Fragment>
             <div className="box-login">
+                <h1>Login</h1>
                 <Form onSubmit={login}>
                     <FormGroup>
                         <Label>Nombre</Label>
