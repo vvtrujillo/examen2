@@ -102,3 +102,36 @@
   border: solid black 2px;
   background-color: rgb(175, 214, 103);
 }
+
+.main-pirate{
+  margin: 30px;
+  background-color: orange;  
+
+}
+.main-pirate-title{
+  height: 100px;
+  background-color: rgb(116, 80, 33);
+}
+
+.main-pirate-title h1{
+  color: white;
+  text-align: center;
+}
+
+.main-pirate-body{
+  padding: 10px;
+}
+
+.main-pirate-body img{
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+}
+
+.content-pirate{
+  background-color: white;
+  margin: 20px;
+  height: auto;
+  width: auto;
+  border-radius: 5px;
+}

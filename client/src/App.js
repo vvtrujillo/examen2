@@ -9,11 +9,12 @@ import Formulario from './components/Proyectos/Formulario';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import MainProyectos from './components/MainProyectos';
+import MainPirates from './components/MainPirates';
+import FormCrearPirate from './components/Pirates/FormCrearPirate';
 
 function App() {
 
-  const navigate = useNavigate(); 
-  const [datos, setDatos] = useState([]);
+  const navigate = useNavigate();   
   const [usuario, setUsuario] = useState();
 
 
@@ -29,19 +30,16 @@ function App() {
     }
   }, [])
 
-  
-
-
   return (
 
     <UserContext.Provider value={{usuario, setUsuario}}>
       <Container>
 
         <Routes>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/registro" element={<Registro />}></Route>
-          <Route path="/*" element={<MainProyectos />}></Route>
-          <Route path='crear' element={<Formulario></Formulario>}></Route>
+          <Route path='/login' element={<Login />}></Route>
+          <Route path='/registro' element={<Registro />}></Route>
+          <Route path='/*' element={<MainPirates />}></Route>
+          <Route path='crear' element={<FormCrearPirate />}></Route>
         </Routes>
       </Container>
     </UserContext.Provider>

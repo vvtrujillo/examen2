@@ -12,5 +12,6 @@ app.use(express.urlencoded({extended: true}));
 require('./config/mong.config');
 require('./routes/usuario.route')(app);
 require('./routes/proyecto.route')(app);
+require('./routes/pirate.route')(app);
 
 app.listen(port, () => console.log('Server Up on port ' + port));
