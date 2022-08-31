@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  justify-content: center;
+  justify-content: relative;  
 }
 
 .App-logo {
@@ -76,7 +76,10 @@
   border-radius: 10px;
   box-shadow: 20px;
   padding: 20px;
-  margin: 50px;
+  margin: 50px;  
+}
+.box-login h1{
+  text-align: center;
 }
 .titulo-col-proy-pend{
   height: auto;

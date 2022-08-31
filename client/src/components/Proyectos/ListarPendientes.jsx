@@ -5,7 +5,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
 
-const ListarPendientes = ({editarFn,datos, setDatos, moverProyectosaProgressFn}) => {
+const ListarPendientes = ({datos, setDatos, moverProyectosaProgressFn}) => {
 
     
     const [recargar, setRecargar] = useState(false);

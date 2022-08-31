@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
+import { Button, Col, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 import { useContext } from "react";
 import UserContext from "../contextos/user-context";
 import { Link, useNavigate } from "react-router-dom";
@@ -53,8 +53,10 @@ const Login = () => {
                         <Label>Clave</Label>
                         <Input type="password" name="password" minLength={6} value={formulario.password} onChange={actualizarFormulario}/>
                     </FormGroup>
-                    <Button type="submit" color='primary'>Login</Button>
-                    <Link to={'/registro'}><Button color="success">Registrarse</Button></Link>
+                    <Row>
+                        <Col><Button type="submit" color='primary'>Login</Button></Col>
+                        <Col><Link to={'/registro'}><Button color="success">Registrarse</Button></Link></Col>
+                    </Row>
                 </Form>                
             </div>
         </React.Fragment>

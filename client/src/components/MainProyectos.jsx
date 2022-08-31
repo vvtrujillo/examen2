@@ -15,10 +15,9 @@ const MainProyectos = () => {
     const [recargar, setRecargar] = useState(false);
     const navigate = useNavigate();
 
-    const [datos, setDatos] = useState([]);
-
-    const [datosPro, setDatosPro] = useState([]);
-    const [datosTerm, setDatosTerm] = useState([]);
+    const [datos, setDatos] = useState([]); //Datos del proyecto
+    const [datosPro, setDatosPro] = useState([]); //para actualizar los datos del proyecto a Progress
+    const [datosTerm, setDatosTerm] = useState([]); //para actualizar los datos del proyecto a Terminados
 
     ///Parar cerrar la sesion del usuario
     const salir = (e) => {
@@ -51,21 +50,7 @@ const MainProyectos = () => {
                     });                    
             }
         })
-    }
-
-    const editar = (proyecto) => {
-        console.log('voy a editar', datos)
-        return axios.put(`http://localhost:8000/api/v1/proyectos/${datos._id}`, proyecto)
-            .then(resp => {
-                if(!resp.data.error) {
-                    setRecargar(!recargar);
-                    return true;
-                } else {
-                    Swal.fire('Ooops!!!', resp.data.mensaje, 'error');
-                    return false;
-                }
-            })
-    }
+    }    
 
     const moverProyectosaProgress = (objPro) => {
         objPro.estado='ejecucion';
@@ -103,6 +88,7 @@ const MainProyectos = () => {
             })        
     }
 
+    //para traer los proyectos que estan creados
     useEffect(() => {
         axios.get('http://localhost:8000/api/v1/proyectosCreados')
             .then(resp => {
@@ -115,6 +101,7 @@ const MainProyectos = () => {
               })
     }, [])
 
+    //para traer los proyectos que estan en ejecucion
     useEffect(() => {
         axios.get('http://localhost:8000/api/v1/proyectosEjecucion')
             .then(resp => {
@@ -127,6 +114,7 @@ const MainProyectos = () => {
               })
     }, [])
 
+    //para traer los proyectos que estan terminados
     useEffect(() => {
         axios.get('http://localhost:8000/api/v1/proyectosTerminados')
             .then(resp => {
@@ -144,7 +132,7 @@ const MainProyectos = () => {
             <div className='main-comp'>
                 <h1>Administrador de proyectos</h1>
                 <div className="container-subcontent">
-                    <ListarPendientes editarFn={editar} datos={datos} setDatos={setDatos} moverProyectosaProgressFn={moverProyectosaProgress}></ListarPendientes>
+                    <ListarPendientes datos={datos} setDatos={setDatos} moverProyectosaProgressFn={moverProyectosaProgress}></ListarPendientes>
                     <ListarInProgress datosPro={datosPro} setDatosPro={setDatosPro} moverProyectosaTermFn={moverProyectosaTerm}></ListarInProgress>
                     <ListarCompletados eliminarFn={eliminar} datosTerm={datosTerm}></ListarCompletados>                     
                 </div>
@@ -152,7 +140,7 @@ const MainProyectos = () => {
                     <Link to={'/crear'}>
                         <Button color='primary'>Crear Proyecto</Button>
                     </Link>
-                    <Button color='danger' onClick={salir}>Salir</Button>
+                    <Button color='danger' onClick={salir}>Cerrar sesión</Button>
                 </div>                
             </div>            
         </React.Fragment>
