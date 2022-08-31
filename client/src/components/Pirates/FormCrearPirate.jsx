@@ -37,7 +37,7 @@ const FormCrearPirate = () => {
     //Función para Crear
     const CrearPirata = (obj) => {
 
-        return axios.post('http://localhost:8000/api/v1/pirates', obj)
+        return axios.post('/api/v1/pirates', obj)
         .then(resp => {
             if(!resp.data.error){
                 setDatos([...datos, resp.data.datosPirate]);
