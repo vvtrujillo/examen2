@@ -119,7 +119,14 @@
 }
 
 .main-pirate-body{
-  padding: 10px;
+  padding: 10px;  
+}
+
+.content-pirate-left{
+  margin: 10px;
+}
+.content-pirate-right{
+  margin: 10px;  
 }
 
 .main-pirate-body img{
@@ -134,4 +141,5 @@
   height: auto;
   width: auto;
   border-radius: 5px;
+  display: flex;
 }
