@@ -30,7 +30,7 @@ const MainPirates = () => {
             cancelButtonColor:'green'
         }).then(resp => {
             if(resp.isConfirmed) {
-                axios.delete(`http://localhost:8000/api/v1/pirates/${pirate._id}`)
+                axios.delete(`/api/v1/pirates/${pirate._id}`)
                 .then(respuesta => {
                     if(!respuesta.data.error) {
                         Swal.fire('Exito','Se ha eliminado el pirata','success');
@@ -47,7 +47,7 @@ const MainPirates = () => {
     }
 
     useEffect(() => {
-        axios.get(('http://localhost:8000/api/v1/pirates'))
+        axios.get(('/api/v1/pirates'))
             .then(resp => {
                 if(!resp.data.error){
                 console.log('Use Effect para listar los piratas creados',resp.data.datosPirate)

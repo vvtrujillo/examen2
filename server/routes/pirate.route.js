@@ -1,4 +1,5 @@
 const PirateController = require('../controllers/pirate.controller');
+const { autenticar } = require('../config/jwt.config');
 
 module.exports = (app) => {
     app.get('/api/v1/pirates', PirateController.listar);
