@@ -31,6 +31,7 @@ const Registro = () => {
             .then(respuesta => {
                 if(!respuesta.data.error) {
                     Swal.fire('Registro', "El usuario se ha registrado exitósamente", "success");
+                    setFormulario(dataInicial);
                 } else {
                     Swal.fire('Registro', "Ha ocurrido un error al regitrar el usuario", "error");
                 }

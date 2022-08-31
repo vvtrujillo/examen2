@@ -145,21 +145,24 @@ const FormCrearPirate = () => {
                         <FormGroup check>
                             <Input id="pegleg"
                                 type="checkbox"
-                                name='pegleg'/>
+                                name='pegleg'
+                                checked='true'/>
                                     {''}
                             <Label check>Peg Leg</Label>
                         </FormGroup>
                         <FormGroup check>
                             <Input id="eyepatch"
                                 type="checkbox"
-                                name='eyepatch'/>
+                                name='eyepatch'
+                                checked='true'/>
                                     {''}
                             <Label check>Eye Patch</Label>
                         </FormGroup>
                         <FormGroup check>
                             <Input id="hookhand"
                                 type="checkbox"
-                                name='hookhand'/>
+                                name='hookhand'
+                                checked='true'/>
                                     {''}
                             <Label check>Hook Hand</Label>
                         </FormGroup>
