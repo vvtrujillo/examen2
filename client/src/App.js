@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 import MainProyectos from './components/MainProyectos';
 import MainPirates from './components/MainPirates';
 import FormCrearPirate from './components/Pirates/FormCrearPirate';
+import Pirates from './components/Pirates/Pirates';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
           <Route path='/registro' element={<Registro />}></Route>
           <Route path='/*' element={<MainPirates />}></Route>
           <Route path='crear' element={<FormCrearPirate />}></Route>
+          <Route path='/revisarPirata' element={<Pirates></Pirates>}></Route>
         </Routes>
       </Container>
     </UserContext.Provider>

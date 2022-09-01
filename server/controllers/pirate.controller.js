@@ -44,3 +44,17 @@ module.exports.eliminar = (req, res) => {
             })
         });
 }
+
+module.exports.listarPirata = (req,res) => {
+    Pirate.findById(req.params.id)
+        .then(resp => {
+            res.json({
+                error: false
+            })            
+        }).catch(e => {
+            res.json({
+                error: true,
+                mensaje: 'No se puede obtener el pirata.'
+            })
+        });
+}

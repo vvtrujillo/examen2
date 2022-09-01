@@ -62,13 +62,13 @@ const MainPirates = () => {
         <React.Fragment>
             <div className='main-pirate'>
                 <div className='main-pirate-title'>
-                    <h1>Main Pirates</h1>
+                    <h1>Pirate Crew</h1>
                     <Link to='/crear'>
                         <Button color='primary'>Crear Pirata</Button>
                     </Link>
                     <Button color='danger' onClick={salir}>Cerrar sesión</Button>
                 </div>
-                <ListarPirates datos={datos} eliminarFn={eliminar}></ListarPirates>
+                <ListarPirates datosPi={datos} eliminarFn={eliminar}></ListarPirates>
             </div>            
         </React.Fragment>
     )
