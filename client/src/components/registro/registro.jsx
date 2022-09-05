@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-
+import { useNavigate } from "react-router-dom";
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 
 const dataInicial = {
@@ -17,6 +17,8 @@ const dataInicial = {
 const Registro = () => {
 
     const [formulario, setFormulario] = useState(dataInicial);
+
+    const navigate = useNavigate();
 
     const actualizarFormulario = ({target: {name, value}}) => {
         setFormulario({
@@ -32,6 +34,7 @@ const Registro = () => {
                 if(!respuesta.data.error) {
                     Swal.fire('Registro', "El usuario se ha registrado exitósamente", "success");
                     setFormulario(dataInicial);
+                    navigate('/login'); //aca vamos directo al login
                 } else {
                     Swal.fire('Registro', "Ha ocurrido un error al regitrar el usuario", "error");
                 }
@@ -90,7 +93,7 @@ const Registro = () => {
                         </FormGroup>
                         <Button type="submit" color="primary">Guardar</Button>
                     </Form>
-                    <Link to={'/login'}>Ingresar</Link>
+                    {/*<Link to={'/login'}>Ingresar</Link>*/}
                 </div>
             </div>            
         </React.Fragment>

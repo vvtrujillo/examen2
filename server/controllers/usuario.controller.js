@@ -7,7 +7,7 @@ const { secretKey } = require('../config/jwt.config')
 module.exports.registrar = (req, res) => {
      Usuario.create(req.body)
         .then(usuario => {
-            console.log(usuario);
+            //console.log(usuario);
             res.json({
                 error: false,
                 mensaje: 'El usuario se ha registrado exitosamente'
