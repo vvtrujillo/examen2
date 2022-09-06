@@ -42,23 +42,24 @@ const Login = () => {
 
     return (
         <React.Fragment>
-            <div className="box-login">
-                <h1>Login</h1>
-                <Form onSubmit={login}>
-                    <FormGroup>
-                        <Label>Nombre</Label>
-                        <Input type="text" name="username" required  value={formulario.username} onChange={actualizarFormulario}/>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label>Clave</Label>
-                        <Input type="password" name="password" minLength={6} value={formulario.password} onChange={actualizarFormulario}/>
-                    </FormGroup>
-                    <Row>
-                        <Col><Button type="submit" color='primary'>Login</Button></Col>
-                        <Col><Link to={'/registro'}><Button color="success">Registrarse</Button></Link></Col>
-                    </Row>
-                </Form>                
-            </div>
+            <div className="container">
+                <div className="card card-container">
+                    <Form onSubmit={login}>
+                        <FormGroup>
+                            <Label>Nombre</Label>
+                            <Input type="text" name="username" required  value={formulario.username} onChange={actualizarFormulario}/>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label>Clave</Label>
+                            <Input type="password" name="password" minLength={6} value={formulario.password} onChange={actualizarFormulario}/>
+                        </FormGroup>
+                        <Row>
+                            <Col><Button type="submit" color='primary'>Login</Button></Col>
+                            <Col><Link to={'/registro'}><Button color="success">Registrarse</Button></Link></Col>
+                        </Row>
+                    </Form>
+                </div>
+            </div>            
         </React.Fragment>
     )
 }

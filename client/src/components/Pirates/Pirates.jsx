@@ -14,7 +14,7 @@ const Pirates = () => {
             .then(resp => {
                 if(!resp.data.error){
                 console.log('Use Effect para listar los piratas creados',resp.data.datosPirate)
-                setDatos(resp.data.datosPirate);                
+                setDatos(resp.data.datosPirate);
                 }else {
                 Swal.fire('Ooops!!!', resp.data.mensaje, 'error');
                 }        
@@ -26,6 +26,9 @@ const Pirates = () => {
         <React.Fragment>
             <h1>Pirata</h1>
             <p>{datos.nombre}</p>
+            <div className="pirate-body-result">
+                <img src={datos.linkimagen} alt="Imagen Pirata" />
+            </div>            
         </React.Fragment>
     )
 }
