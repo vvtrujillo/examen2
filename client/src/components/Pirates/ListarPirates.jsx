@@ -10,17 +10,7 @@ const ListarPirates = ({datosPi, eliminarFn}) => {
 
     const [datos, setDatos] = useState([]);
 
-    {/**useEffect(() => {
-        axios.get((`/api/v1/pirates/${j._id}`))
-            .then(resp => {
-                if(!resp.data.error){
-                console.log('Use Effect para listar los piratas creados',resp.data.datosPirate)
-                setDatos(resp.data.datosPirate); 
-                }else {
-                Swal.fire('Ooops!!!', resp.data.mensaje, 'error');
-                }        
-            })
-    }, []) */}
+    {/** */}
     
 
     return(
@@ -34,12 +24,9 @@ const ListarPirates = ({datosPi, eliminarFn}) => {
                             </div>  
                             <div className='content-pirate-right'>
                                 <h1>{j.nombre}</h1>
-                                <Link to='/revisarPirata'>
+                                <Link to={`/revisarPirata/${j._id}`}>
                                     <Button color='primary'>Ver pirata</Button>
-                                </Link>
-                                <Routes>
-                                    <Route path='revisarPirata' element={<Pirates datos={datos}></Pirates>}></Route>
-                                </Routes>                                
+                                </Link>                                
                                 <Button color='danger' onClick={e => eliminarFn(j)}>Eliminar pirata</Button>
                             </div>
                         </div>

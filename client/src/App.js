@@ -41,7 +41,7 @@ function App() {
           <Route path='/registro' element={<Registro />}></Route>
           <Route path='/*' element={<MainPirates />}></Route>
           <Route path='crear' element={<FormCrearPirate />}></Route>
-          <Route path='/revisarPirata' element={<Pirates></Pirates>}></Route>
+          <Route path='/revisarPirata/:id' element={<Pirates></Pirates>}></Route>
         </Routes>
       </Container>
     </UserContext.Provider>

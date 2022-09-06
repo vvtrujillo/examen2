@@ -49,7 +49,8 @@ module.exports.listarPirata = (req,res) => {
     Pirate.findById(req.params.id)
         .then(resp => {
             res.json({
-                error: false
+                datosPirate: resp,
+                error: false                               
             })            
         }).catch(e => {
             res.json({
