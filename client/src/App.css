@@ -142,6 +142,26 @@
   object-fit: contain;
 }
 
+.pirate-body-result{
+  width: auto;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.pirate-body-result-l{
+  height: auto;
+  background-color: rgb(116, 80, 33);
+}
+
+.pirate-body-result-r{
+  height: auto;
+  background-color: rgb(27, 21, 103);
+}
+
+
 .content-pirate{
   background-color: white;
   margin: 20px;
@@ -166,6 +186,10 @@
 .card-container.card {
   max-width: 350px;
   padding: 40px 40px;
+}
+
+.card-container h3{
+  justify-content: center;
 }
 
 .btn {

@@ -44,6 +44,9 @@ const Login = () => {
         <React.Fragment>
             <div className="container">
                 <div className="card card-container">
+                    <Row>
+                        <Col><h3>Login</h3></Col>
+                    </Row>
                     <Form onSubmit={login}>
                         <FormGroup>
                             <Label>Nombre</Label>
